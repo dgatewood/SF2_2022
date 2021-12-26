@@ -1,0 +1,31 @@
+<html> 
+<head>
+  <style>
+   *{padding: 0; margin:0;}
+   canvas{ background: #eee; display: block; margin: 0 auto;}
+   </style>
+</head>
+<body>
+<canvas id= "myCanvas" width="512" height="224"></canvas>
+<script type="text/javascript">
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+document.addEventListener("keydown",keyDownHandler, false);
+document.addEventListener("keyup",keyUpHandler,false);
+let fps = 60;
+
+
+
+function draw () {
+	setTimeout(function() {
+	requestAnimationFrame(draw);
+	ctx.fillStyle = "rgb(80, 152, 216)";
+	ctx.fillRect(0,0,800,600);
+
+   },1000/fps);
+}
+draw();
+
+</script>
+</body>
+</html>
